@@ -35,12 +35,12 @@ echo ""
 
 
 # 2.	Pobierz z bazy jedną z dodanych przez Ciebie wartości. 
-curl -v http://127.0.0.1:8098/buckets/$BUCKET/keys/2 > rozwiazanie2.txt
+curl -i http://127.0.0.1:8098/buckets/$BUCKET/keys/2 > rozwiazanie2.txt
 
 # 3.	Zmodyfikuj jedną z wartości – dodając dodatkowe pole do dokumentu. 
 key=1
 new_data=$( curl http://127.0.0.1:8098/buckets/$BUCKET/keys/$key 2>/dev/null | jq -c '. + {"hobby": ["jogging", "swimming"]}' )
-curl -XPOST -i -H -vvv "Content-Type: application/json" \
+curl -XPOST -i -H "Content-Type: application/json" \
         -d "$new_data" \
         http://localhost:8098/buckets/$BUCKET/keys/$key > rozwiazanie3.txt
 
@@ -49,7 +49,7 @@ curl http://127.0.0.1:8098/buckets/$BUCKET/keys/$key
 # 4.	Zmodyfikuj jedną z wartości – usuwając jedną pole z wybranego dokumentu.
 key=0
 new_data=$( curl http://127.0.0.1:8098/buckets/$BUCKET/keys/$key 2>/dev/null | jq -c 'del(.first_name)' )
-curl -XPOST -i -H -vvv "Content-Type: application/json" \
+curl -XPOST -i -H "Content-Type: application/json" \
         -d "$new_data" \
         http://localhost:8098/buckets/$BUCKET/keys/$key > rozwiazanie4.txt
 
@@ -58,7 +58,7 @@ curl http://127.0.0.1:8098/buckets/$BUCKET/keys/$key
 # 5.	Zmodyfikuj jedną z wartości – zmieniając wartość jednego z pól.
 key=3
 new_data=$( curl http://127.0.0.1:8098/buckets/$BUCKET/keys/$key 2>/dev/null | jq -c '.first_name="Karol"' )
-curl -XPOST -i -H -vvv "Content-Type: application/json" \
+curl -XPOST -i -H "Content-Type: application/json" \
         -d "$new_data" \
         http://localhost:8098/buckets/$BUCKET/keys/$key > rozwiazanie5.txt
 
@@ -66,7 +66,7 @@ curl http://127.0.0.1:8098/buckets/$BUCKET/keys/$key
 
 # 6.	Usuń jeden z dokumentów z bazy. 
 key=4
-curl -XDELETE -i -H -vvv "Content-Type: application/json" \
+curl -XDELETE -i -H "Content-Type: application/json" \
         http://localhost:8098/buckets/$BUCKET/keys/$key > rozwiazanie6.txt
 
 
