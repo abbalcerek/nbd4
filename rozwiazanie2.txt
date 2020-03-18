@@ -1,1 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8Z0RKGy1fuPQB2ZwZTInMeawMH/Y8u86XBQA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s21976>; rel="up"
+Last-Modified: Wed, 18 Mar 2020 15:40:32 GMT
+ETag: "140byEuAdApOuGWyXV0k1A"
+Date: Wed, 18 Mar 2020 15:40:33 GMT
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 84
+
 { "sex" : "Female",  "first_name" : "Aneta", "email" : "aneta@gmail.com", "age": 33}
