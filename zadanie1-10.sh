@@ -71,7 +71,7 @@ curl -XDELETE -i -H "Content-Type: application/json" \
 
 
 # 7.	Spróbuj pobrać z bazy wartość, która nie istnieje w tej bazie. 
-curl http://127.0.0.1:8098/buckets/$BUCKET/keys/$key > rozwiazanie7.txt
+curl -i http://127.0.0.1:8098/buckets/$BUCKET/keys/$key > rozwiazanie7.txt
 
 # 8.	Dodaj do bazy 1 dokument json (zawierający 1 pole), ale nie specyfikuj klucza.
 location=$( curl -XPOST -i -H "Content-Type: application/json" \
