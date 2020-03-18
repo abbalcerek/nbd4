@@ -1,0 +1,8 @@
+Rekord inicjalnie zapisany w bazie:
+ key: marleen.manager@riak.com, value: {'user_name': 'marleenmgr', 'full_name': 'Marleen Manager', 'email': 'marleen.manager@riak.com'}
+Rekord pobrany z bazy po inicjalnym zapisie:
+ {'user_name': 'marleenmgr', 'full_name': 'Marleen Manager', 'email': 'marleen.manager@riak.com'}
+Rekord pobrany z bazy po aktualizacji pola user_name:
+ {'user_name': 'MARLEENMGR', 'full_name': 'Marleen Manager', 'email': 'marleen.manager@riak.com'}
+Wartosc pola 'data' po usunieciu rekordu dla klucza:
+ None
